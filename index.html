@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/Images/icon.svg" type="image/png">
+    <title>Dự án YOLOv8 Object Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #2980b9;
+        }
+
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .video-demo {
+            margin-top: 20px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dự án YOLOv8 - Nhận diện đối tượng</h1>
+
+    <p>
+        Dự án này sử dụng mô hình <strong>YOLOv8n</strong> để nhận diện đối tượng từ hình ảnh. 
+        Tại đây người dùng có thể upload ảnh, nhận kết quả ảnh được detect, các ảnh đã upload sẽ được lưu trữ cùng với kết quả detect và có thể tìm kiếm ảnh dựa trên tên nhãn.
+    </p>
+
+    <div class="github-link">
+        <a href="https://github.com/TrungTruong32/YOLOv8_app" target="_blank">
+            Xem mã nguồn tại đây
+        </a>
+    </div>
+
+    <h2>Video demo</h2>
+    <video width="640" height="360" controls>
+        <source src="demoYOLOv8.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+    </video>
+
+
+    <h2>Công nghệ sử dụng</h2>
+    <ul>
+        <li>Python</li>
+        <li>YOLOv8 (Ultralytics)</li>
+        <li>Flask</li>
+        <li>HTML/CSS</li>
+    </ul>
+
+    <h2>Cài đặt</h2>
+    <pre>
+    Đọc file <a href="README.md" target="_blank">README.md</a> để biết cách cài đặt và chạy dự án.
+    </pre>
+
+    <h2>Liên hệ</h2>
+    <p>Liên hệ  <a href="mailto:trungtruong.hcmus@gmail.com"><strong>Trung Trương</strong> </a> nếu có câu hỏi hoặc muốn đóng góp vào dự án.</p>
+</body>
+</html>
