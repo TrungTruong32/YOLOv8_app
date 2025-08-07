@@ -1,11 +1,14 @@
 # YOLOv8_app
-Đây là một trang web đơn giản được xây dựng bằng Flask và YOLOv8n (nano) để phát hiện đối tượng trong ảnh. Việc chọn YOLOv8n (nano) thay vì YOLOv8m, YOLOv8s, YOLOv8l, hoặc YOLOv8x thường dựa trên cân bằng giữa tốc độ, độ chính xác và tài nguyên hệ thống. Tại đây người dùng có thể upload ảnh, nhận kết quả ảnh được detect, các ảnh đã upload sẽ được lưu trữ cùng với kết quả detect và có thể tìm kiếm ảnh dựa trên tên nhãn.
+Đây là một trang web đơn giản được xây dựng bằng Flask và YOLOv8n (nano) để phát hiện đối tượng trong ảnh. Việc chọn YOLOv8n (nano) thay vì YOLOv8m, YOLOv8s, YOLOv8l, hoặc YOLOv8x vì muốn cân bằng giữa tốc độ, độ chính xác và tài nguyên hệ thống không quá mạnh, dễ triển khai. Tại đây người dùng có thể upload ảnh, nhận kết quả ảnh được detect, các ảnh đã upload sẽ được lưu trữ cùng với kết quả detect và có thể tìm kiếm ảnh dựa trên tên nhãn.
 
 ## Cách sử dụng
 
 1. Tạo môi trường ảo
 ```
-python -m venv venv
+python -m venv yolo_env
+
+.\yolo_env\Scripts\Activate
+
 ```
 2. Cài đặt các package cần thiết
 ```

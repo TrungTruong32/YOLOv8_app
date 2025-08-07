@@ -13,11 +13,10 @@
         <a href="{{ url_for('uploads_page') }}" style="color: white; text-decoration: none; font-weight: bold;">Ảnh đã upload</a>
     </nav>
     
-    <form action="{{ url_for('search_by_label') }}" method="get" style="text-align:center; margin-bottom: 20px;">
-        <input type="text" name="label" placeholder="Nhập tên nhãn (ví dụ: person)" required>
-        <button type="submit">🔍 Tìm kiếm</button>
-    </form>
-    
+    <form action="{{ url_for('search_by_label') }}" method="get" class="search-form">
+        <input type="text" name="label" placeholder=" Tìm theo nhãn (vd: person, cat,...)" required class="search-input">
+        <button type="submit" class="search-button">Tìm kiếm</button>
+    </form>    
 
     <h2>Ảnh đã upload</h2>
 
