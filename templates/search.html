@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết quả tìm kiếm</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .item {
+            text-align: center;
+        }
+        .item img {
+            width: 200px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: #0078D7; padding: 15px;">
+        <a href="{{ url_for('index') }}" style="color: white; text-decoration: none; margin-right: 20px; font-weight: bold;">Trang chủ</a>
+        <a href="{{ url_for('uploads_page') }}" style="color: white; text-decoration: none; font-weight: bold;">Ảnh đã upload</a>
+    </nav>
+
+    <h2>Kết quả tìm kiếm cho nhãn: "{{ label }}"</h2>
+    <div class="gallery">
+        {% for img in images %}
+            <div class="item">
+                <a href="{{ url_for('detect_existing', filename=img.filename) }}">
+                    <img src="{{ img.url }}" alt="Ảnh tìm thấy">
+                </a>
+                <p>{{ img.filename }}</p>
+            </div>
+        {% endfor %}
+        {% if images|length == 0 %}
+            <p>Không tìm thấy ảnh nào chứa nhãn "{{ label }}".</p>
+        {% endif %}
+    </div>
+</body>
+</html>

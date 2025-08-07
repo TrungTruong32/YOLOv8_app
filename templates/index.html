@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát hiện đối tượng - YOLOv8</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0078D7;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: #0078D7; padding: 15px;">
+        <a href="{{ url_for('index') }}" style="color: white; text-decoration: none; margin-right: 20px; font-weight: bold;">Trang chủ</a>
+        <a href="{{ url_for('uploads_page') }}" style="color: white; text-decoration: none; font-weight: bold;">Ảnh đã upload</a>
+    </nav>
+    
+    <div class="container">
+        <h2> Phát hiện đối tượng với YOLOv8</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required onchange="previewImage(event)">
+            <br>
+            <img id="preview" style="max-width: 100%; margin-top: 10px; display: none;" alt="Xem trước ảnh">
+            <br>
+            <input type="submit" value="Phát hiện">
+        </form>
+        
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if result_img %}
+            <h3>Kết quả:</h3>
+            <img src="{{ result_img }}" alt="Kết quả phát hiện đối tượng">
+        {% endif %}
+    </div>
+</body>
+</html>
+<script>
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
+        }
+    }
+</script>
+
+
