@@ -139,6 +139,7 @@ celerybeat.pid
 .envrc
 .venv
 env/
+yolo_env/
 venv/
 ENV/
 env.bak/
